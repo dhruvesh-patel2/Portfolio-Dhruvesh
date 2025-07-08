@@ -1,0 +1,32 @@
+// src/styles/global.scss
+
+@import './variables.scss';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family-base;
+  background-color: #f9f9f9;  
+  color: $color-text-default;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+$color-primary: #0077ff;
+$color-text-default: #222;
+$color-text-muted: #555;
+$color-bg: #fff;
+$color-bg-overlay: rgba(0, 0, 0, 0.05);

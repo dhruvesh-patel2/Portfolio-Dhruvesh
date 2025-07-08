@@ -1,0 +1,114 @@
+// src/components/Header/Header.scss
+
+@import '../../styles/variables.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $header-height;
+  background-color: $color-bg;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  z-index: 1000;
+
+  &__logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__nav {
+    display: flex;
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    li {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: $color-text-default;
+      transition: color 0.3s ease;
+
+      &.active,
+      &:hover {
+        color: $color-primary;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+    
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    span {
+      display: block;
+      height: 3px;
+      background-color: $color-text-default;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      background-color: #000
+    }
+
+    &.open {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+  }
+
+  // Responsive
+
+  @media (max-width: $breakpoint-sm) {
+    &__nav {
+      position: fixed;
+      top: $header-height;
+      right: 0;
+      background-color: $color-bg;
+      height: calc(100vh - $header-height);
+      width: 60%;
+      max-width: 300px;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      padding: 2rem 1.5rem;
+
+      ul {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      &.open {
+        transform: translateX(0);
+      }
+    }
+
+    &__burger {
+      display: flex;
+    }
+  }
+}
