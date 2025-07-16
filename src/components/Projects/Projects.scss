@@ -1,0 +1,230 @@
+.projects-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #d1d1d1 100%);
+    padding: 4rem 1rem;
+    color: #111;
+    text-align: center;
+  
+    h2 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+  
+    .section-description {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      color: #333;
+    }
+  
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      height: 420px;
+      margin: 0 auto;
+      perspective: 1000px;
+    }
+  
+    .card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 380px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      transform-style: preserve-3d;
+      transition: all 0.5s ease;
+      color: #fff;
+      opacity: 0;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+  
+      .card-content {
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(5px);
+        width: 100%;
+        padding: 1rem;
+        text-align: left;
+        min-height: 120px; // ✅ assure la même hauteur
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+  
+        h3 {
+          margin: 0 0 0.5rem;
+          font-size: 1.3rem;
+          font-weight: 600;
+        }
+  
+        p {
+          font-size: 0.95rem;
+          line-height: 1.4;
+          margin-bottom: 0.5rem;
+          flex: 1;
+        }
+  
+        .neon-line {
+          display: block;
+          width: 60px;
+          height: 3px;
+          background: #00bfff;
+          box-shadow: 0 0 10px #00bfff;
+          border-radius: 3px;
+          margin-top: auto;
+        }
+      }
+  
+      &.active {
+        opacity: 1;
+        transform: translate(-50%, -50%) translateZ(0) rotateY(0);
+        z-index: 10;
+      }
+  
+      &.left {
+        opacity: 1;
+        transform: translate(calc(-50% + 320px), -50%) translateZ(-100px) rotateY(15deg);
+        z-index: 5;
+      }
+  
+      &.right {
+        opacity: 1;
+        transform: translate(calc(-50% - 320px), -50%) translateZ(-100px) rotateY(-15deg);
+        z-index: 5;
+      }
+  
+      &.hidden {
+        opacity: 0;
+        transform: translate(-50%, -50%) translateZ(-200px);
+        z-index: 0;
+        pointer-events: none;
+      }
+    }
+  
+    .nav-buttons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+  
+      button {
+        background: #444;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s;
+  
+        &:hover {
+          background: #222;
+        }
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    .projects-section {
+      .slider {
+        height: 380px;
+      }
+  
+      .card {
+        width: 260px;
+        height: 340px;
+  
+        &.left {
+          transform: translate(calc(-50% + 280px), -50%) translateZ(-80px) rotateY(15deg);
+        }
+  
+        &.right {
+          transform: translate(calc(-50% - 280px), -50%) translateZ(-80px) rotateY(-15deg);
+        }
+  
+        .card-content {
+          padding: 0.8rem;
+  
+          h3 {
+            font-size: 1.1rem;
+          }
+  
+          p {
+            font-size: 0.85rem;
+          }
+  
+          .neon-line {
+            width: 50px;
+            height: 2px;
+          }
+        }
+      }
+  
+      .nav-buttons {
+        margin-top: 1.5rem;
+  
+        button {
+          font-size: 1.3rem;
+          width: 42px;
+          height: 42px;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .projects-section {
+      padding: 3rem 1rem;
+  
+      .slider {
+        height: 300px;
+      }
+  
+      .card {
+        width: 220px;
+        height: 300px;
+  
+        &.left {
+          transform: translate(calc(-50% + 240px), -50%) translateZ(-60px) rotateY(12deg);
+        }
+  
+        &.right {
+          transform: translate(calc(-50% - 240px), -50%) translateZ(-60px) rotateY(-12deg);
+        }
+  
+        .card-content {
+          padding: 0.6rem;
+  
+          h3 {
+            font-size: 1rem;
+          }
+  
+          p {
+            font-size: 0.8rem;
+          }
+  
+          .neon-line {
+            width: 40px;
+          }
+        }
+      }
+  
+      .nav-buttons {
+        gap: 0.8rem;
+  
+        button {
+          font-size: 1.1rem;
+          width: 36px;
+          height: 36px;
+        }
+      }
+    }
+  }
+  

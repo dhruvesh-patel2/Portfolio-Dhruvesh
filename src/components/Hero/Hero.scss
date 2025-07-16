@@ -74,3 +74,41 @@
     opacity: 1;
   }
 }
+.hero-image {
+  margin-left: 17%;
+  margin-top: 10%;
+  opacity: 0;//a metre sur 1
+
+  img {
+    width: 120%; 
+    max-width: none; 
+    height: auto;
+  }
+}
+.btn-projects {
+  margin: 2rem auto 0;
+  padding: 0.75rem 2.2rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #121212;  // noir très foncé
+  border: 2px solid #ff0000;  // rouge vif
+  border-radius: 30px;
+  cursor: pointer;
+  display: block;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+
+  &:hover {
+    background-color: #bebebe; // rouge vif en fond
+    color: #000000;             // texte noir foncé
+    box-shadow: 0 8px 25px rgba(43, 26, 26, 0.7);
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.6);
+  }
+}
+

@@ -1,48 +1,64 @@
+@import '../../styles/variables.scss'; // tu peux la garder si tu veux utiliser tes variables plus tard
+
 .introduction-section {
   background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 30%, #333333 100%);
-  padding: 4rem 2rem;
-  min-height: 60vh;
+  padding: 6rem 2rem;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  color: #111;
 
   .content-wrapper {
     max-width: 900px;
-    margin: 0 auto;
     width: 100%;
-    padding: 0 1rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
   }
 
   .intro-text {
-    max-width: 600px;
+    max-width: 650px;
     text-align: left;
+    margin: 0 auto;
   }
 
   .intro-label {
     font-style: italic;
-    color: #888;
+    color: #666;
     font-size: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: 1px;
   }
 
   .intro-title {
     font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
     color: #222;
+    border-left: 5px solid #ff4c60; // Remplacement direct de $color-primary
+    padding-left: 1rem;
   }
 
   .intro-description {
     font-size: 1.125rem;
-    line-height: 1.6;
-    color: #000000;
+    line-height: 1.8;
+    color: #333;
+    font-weight: 300;
   }
 
   @media (max-width: 768px) {
-    padding: 3rem 1.5rem;
+    padding: 4rem 1.5rem;
 
     .intro-title {
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
 
     .intro-description {
@@ -51,10 +67,10 @@
   }
 
   @media (max-width: 480px) {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
 
     .intro-title {
-      font-size: 1.75rem;
+      font-size: 1.9rem;
     }
 
     .intro-description {

@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer__links">
           <a href="#about">À propos</a>
           <a href="#contact">Contact</a>
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://github.com/dhruvesh-patel2?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </div>
     </footer>

@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const navLinks = [
-  { id: 'projects', title: 'Projets' },
   { id: 'about', title: 'À propos' },
+  { id: 'projects', title: 'Projets' },
   { id: 'contact', title: 'Contact' },
 ];
 

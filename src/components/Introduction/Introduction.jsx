@@ -1,4 +1,5 @@
 import React from 'react';
+import { Info } from 'lucide-react'; // ou tout autre icône moderne
 import './Introduction.scss';
 
 const Introduction = () => {
@@ -6,8 +7,11 @@ const Introduction = () => {
     <section className="introduction-section">
       <div className="content-wrapper">
         <div className="intro-text">
-          <p className="intro-label">Introduction</p>
-          <h2 className="intro-title">A propos de moi.</h2>
+          <p className="intro-label">
+            <Info size={16} style={{ marginRight: '6px' }} />
+            Introduction
+          </p>
+          <h2 className="intro-title">À propos de moi</h2>
           <p className="intro-description">
             Je m'appelle Dhruvesh, je suis en formation pour devenir intégrateur web.
             Passionné par le développement front-end, j’apprends à créer des interfaces modernes, responsives et accessibles avec HTML, CSS, Sass, JavaScript et React.
