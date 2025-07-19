@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Projects.scss';
 import cardsData from './cardsData';
-import { FaGithub } from 'react-icons/fa'; // 👉 Assure-toi d’avoir installé react-icons : npm i react-icons
+import { FaGithub } from 'react-icons/fa'; 
 
 const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(2);
@@ -48,7 +48,7 @@ const Projects = () => {
                   className="github-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()} // empêche la redirection vers le site quand on clique sur le logo GitHub
+                  onClick={(e) => e.stopPropagation()} 
                 >
                   <FaGithub size={20} title="Voir le code sur GitHub" />
                 </a>
