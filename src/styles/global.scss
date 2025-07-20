@@ -1,6 +1,9 @@
 // src/styles/global.scss
 
 @import './variables.scss';
+body {
+  overflow-x: hidden;
+}
 
 *,
 *::before,
