@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Projects.scss';
 import cardsData from './cardsData';
-import { FaGithub } from 'react-icons/fa'; 
+import { FaGithub } from 'react-icons/fa';
 
 const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(2);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); // appel initial
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const prevSlide = () => {
     setActiveIndex((prev) => (prev === 0 ? cardsData.length - 1 : prev - 1));
@@ -25,10 +36,18 @@ const Projects = () => {
         {cardsData.map((card, index) => {
           let className = 'card';
 
-          if (index === activeIndex) className += ' active';
-          else if (index === (activeIndex - 1 + cardsData.length) % cardsData.length) className += ' left';
-          else if (index === (activeIndex + 1) % cardsData.length) className += ' right';
-          else className += ' hidden';
+          const prevIndex = (activeIndex - 1 + cardsData.length) % cardsData.length;
+          const nextIndex = (activeIndex + 1) % cardsData.length;
+
+          if (index === activeIndex) {
+            className += ' active';
+          } else if (index === (isMobile ? nextIndex : prevIndex)) {
+            className += ' left';
+          } else if (index === (isMobile ? prevIndex : nextIndex)) {
+            className += ' right';
+          } else {
+            className += ' hidden';
+          }
 
           return (
             <a
@@ -48,7 +67,7 @@ const Projects = () => {
                   className="github-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()} 
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <FaGithub size={20} title="Voir le code sur GitHub" />
                 </a>

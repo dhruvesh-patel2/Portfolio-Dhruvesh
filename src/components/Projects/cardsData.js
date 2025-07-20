@@ -9,7 +9,7 @@ const cardsData = [
     id: 1,
     image: argentBankImg,
     title: 'Argent Bank',
-    description: 'Application bancaire avec authentification sécurisée et API complète.',
+    description: 'App bancaire avec authentification et tableau de bord utilisateur. (React, Redux, API, Sass)',
     site: 'https://argent-bank-frontend-green.vercel.app/',
     github: 'https://github.com/dhruvesh-patel2/ArgentBank-Frontend'
   },
@@ -17,7 +17,7 @@ const cardsData = [
     id: 2,
     image: bookiImg,
     title: 'Booki',
-    description: 'Site de réservation d’hébergements avec filtres interactifs.',
+    description: 'Site de réservation responsive avec filtres dynamiques. (HTML, CSS, Flexbox)',
     site: 'https://dhruvesh-patel2.github.io/BOOKIP3/',
     github: 'https://github.com/dhruvesh-patel2/BOOKIP3'
   },
@@ -25,7 +25,7 @@ const cardsData = [
     id: 3,
     image: kasaImg,
     title: 'Kasa',
-    description: 'Plateforme de location immobilière développée en React.',
+    description: 'Plateforme de locations avec affichage dynamique et navigation. (React, Sass, Router)',
     site: 'https://kaza-p7-jebz-igp7jzkw0-dhruveshs-projects-d6e579cc.vercel.app/',
     github: 'https://github.com/dhruvesh-patel2/kaza-p7'
   },
@@ -33,7 +33,7 @@ const cardsData = [
     id: 4,
     image: ninaCarducciImg,
     title: 'Nina Carducci',
-    description: 'Site vitrine optimisé SEO pour une photographe professionnelle.',
+    description: 'Site vitrine optimisé SEO et performance. (HTML, CSS, JS, Lighthouse)',
     site: 'https://dhruvesh-patel2.github.io/ninacarducci/',
     github: 'https://github.com/dhruvesh-patel2/ninacarducci'
   },
@@ -41,7 +41,7 @@ const cardsData = [
     id: 5,
     image: ohmyfoodImg,
     title: 'Oh My Food!',
-    description: 'Application mobile avec animations CSS de menus gastronomiques.',
+    description: 'Menus animés pour restaurants sur mobile. (HTML, Sass, Animations CSS)',
     site: 'https://dhruvesh-patel2.github.io/ohmyfood/',
     github: 'https://github.com/dhruvesh-patel2/ohmyfood'
   }

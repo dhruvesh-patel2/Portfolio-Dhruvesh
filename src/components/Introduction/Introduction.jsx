@@ -1,5 +1,5 @@
 import React from 'react';
-import { Info } from 'lucide-react'; // ou tout autre icône moderne
+import { Info } from 'lucide-react'; 
 import './Introduction.scss';
 
 const Introduction = () => {
