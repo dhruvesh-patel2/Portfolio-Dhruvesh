@@ -1,29 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Projects.scss';
 import cardsData from './cardsData';
 import { FaGithub } from 'react-icons/fa';
+import useSlider from './useSlider';
 
 const Projects = () => {
-  const [activeIndex, setActiveIndex] = useState(2);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize(); // appel initial
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const prevSlide = () => {
-    setActiveIndex((prev) => (prev === 0 ? cardsData.length - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setActiveIndex((prev) => (prev === cardsData.length - 1 ? 0 : prev + 1));
-  };
+  const {
+    activeIndex,
+    isMobile,
+    prevSlide,
+    nextSlide,
+    prevIndex,
+    nextIndex,
+    onTouchStart,
+    onTouchEnd,
+  } = useSlider();
 
   return (
     <section className="projects-section">
@@ -32,12 +23,13 @@ const Projects = () => {
         Une sélection de mes travaux en développement web, réalisés dans un contexte professionnel ou de formation.
       </p>
 
-      <div className="slider">
+      <div
+        className="slider"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
         {cardsData.map((card, index) => {
           let className = 'card';
-
-          const prevIndex = (activeIndex - 1 + cardsData.length) % cardsData.length;
-          const nextIndex = (activeIndex + 1) % cardsData.length;
 
           if (index === activeIndex) {
             className += ' active';
